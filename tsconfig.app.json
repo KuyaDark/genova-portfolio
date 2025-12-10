@@ -24,6 +24,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/global.d.ts", "components/ShinyText.tsx", "components/ScrambledText.tsx", "components/PillNav.tsx",  "src/meshline.d.ts", "src/vite-env.d.ts", "components/ProfileCard.tsx"]
+  "include": ["src", "src/global.d.ts", "components/ScrambledText.tsx", "components/PillNav.tsx",  "src/meshline.d.ts", "src/vite-env.d.ts", "components/ProfileCard.tsx"]
   
 }

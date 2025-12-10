@@ -71,7 +71,7 @@ import DarkVeil from "../animation/dark-viel";
 import "./App.css";
 import TrueFocus from "../animation/true-focus";
 import Navbar from "../components/navbar";
-import CircularText from "../animation/circular-text";
+
 import AboutMe from "../components/aboutMe";
 import EducationalBackground from "../components/educationalbg";
 import Showcase from "../components/Showcase";
@@ -150,12 +150,7 @@ const App = () => {
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
           }`}
         >
-          <CircularText
-            text="PERSONAL*PORTFOLIO*"
-            onHover="speedUp"
-            spinDuration={20}
-            className="sans-serif"
-          />
+
         </div>
       </div>
 
