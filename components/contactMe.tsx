@@ -44,7 +44,7 @@ function ContactMe() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center p-6 min-h-screen">
+    <div className="flex flex-col justify-center items-center min-h-screen">
       <h1 className=" overpass text-3xl font-bold mb-24  text-center text-white block-zoom">
         Get In Touch
       </h1>
