@@ -64,6 +64,14 @@ import GlassProfileCard from "./ProfileCard";
 import "./global.css";
 
 function AboutMe() {
+
+    const handleDownload = () =>{
+      const link = document.createElement("a");
+      link.href = "/Renan_Jayson_Genova_CV.pdf";
+      link.download = "/Renan_Jayson_Genova_CV.pdf";
+      link.click();
+    }
+  
   return (
     <div className="flex flex-col md:flex-row items-center md:items-start gap-10 w-full px-4 sm:px-8 md:px-16 py-20">
       <div className="flex-1 z-10 flex justify-center items-center min-h-[300px] block-left">
@@ -107,6 +115,8 @@ function AboutMe() {
 
         <div className="flex justify-center md:justify-start">
           <button
+          type="button"
+          onClick={handleDownload}
             className="group flex items-center justify-center gap-2 border-2 border-white 
                        rounded-2xl px-5 py-2 w-fit
                        hover:border-blue-800 hover:scale-105 transition-all duration-300 cursor-pointer"
