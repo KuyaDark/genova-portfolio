@@ -182,13 +182,17 @@ const Kostek = ({ onNavigate }) => {
               <button
                 type="button"
                 onClick={() => onNavigate("bread-winner")}
-                className="group flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors py-2"
+                className="group flex items-center gap-1.5 md:gap-2 
+             px-4 py-2 md:px-6 md:py-3 
+             text-[8px] md:text-[10px] font-bold tracking-[0.2em] uppercase 
+             text-white/50 border border-white/10 rounded-full 
+             backdrop-blur-sm bg-white/5
+             hover:text-white hover:border-white/40 hover:bg-white/10 
+             active:scale-95
+             transition-all duration-300 ease-out"
               >
-                <span>Next Project</span>
-                <HiChevronRight
-                  size={16}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
+                <span className="relative">Next Project</span>
+                <HiChevronRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
           </div>

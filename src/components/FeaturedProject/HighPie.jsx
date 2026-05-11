@@ -181,13 +181,20 @@ const HighPie = ({ onNavigate }) => {
               <button
                 type="button"
                 onClick={() => onNavigate("flowstate")}
-                className="group flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors"
+                className="group flex items-center gap-1.5 md:gap-2 
+             px-4 py-2 md:px-6 md:py-3 
+             text-[8px] md:text-[10px] font-bold tracking-[0.2em] uppercase 
+             text-white/50 border border-white/10 rounded-full 
+             backdrop-blur-sm bg-white/5
+             hover:text-white hover:border-white/40 hover:bg-white/10 
+             active:scale-95
+             transition-all duration-300 ease-out"
               >
                 <HiChevronLeft
                   size={16}
                   className="group-hover:-translate-x-1 transition-transform"
                 />
-                <span>Previous Pro</span>
+                <span>Previous Project</span>
               </button>
 
               <div className="h-px flex-1 bg-white/[0.06] mx-4" />
@@ -195,9 +202,16 @@ const HighPie = ({ onNavigate }) => {
               <button
                 type="button"
                 onClick={() => onNavigate("expenses-tracker")}
-                className="group flex items-center gap-2 text-[10px] font-semibold tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors"
+                className="group flex items-center gap-1.5 md:gap-2 
+             px-4 py-2 md:px-6 md:py-3 
+             text-[8px] md:text-[10px] font-bold tracking-[0.2em] uppercase 
+             text-white/50 border border-white/10 rounded-full 
+             backdrop-blur-sm bg-white/5
+             hover:text-white hover:border-white/40 hover:bg-white/10 
+             active:scale-95
+             transition-all duration-300 ease-out"
               >
-                <span>Next</span>
+                <span>Next Project</span>
                 <HiChevronRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"

@@ -1,80 +1,8 @@
 
 
-// import React from "react";
-// import { motion as Motion } from "framer-motion";
-// import Scroll from "../Scroll";
-
-// const ScrollSection = ({ children }) => {
-//   return (
-//     <Motion.div
-//       initial={{ opacity: 0, y: 30 }}
-//       whileInView={{ opacity: 1, y: 0 }}
-//       exit={{ opacity: 0, y: -30 }}
-//       viewport={{ amount: 0.5 }}
-//       transition={{ duration: 0.8 }}
-//       // Increased padding and min-height to ensure clear separation
-//       className="min-h-[110vh] flex items-center justify-center px-8 lg:px-20"
-//     >
-//       {/* max-w-4xl keeps the text from becoming too long and hard to read */}
-//       <div className="max-w-4xl">{children}</div>
-//     </Motion.div>
-//   );
-// };
-
-// const ProfileInformation = () => {
-//   return (
-//     <div className="relative w-full flex flex-col lg:flex-row lg:items-start bg-[#0a0a0a]">
-//       {/* LEFT SIDE: SCROLLABLE TEXT */}
-//       <div className="w-full lg:w-[60%] order-2 lg:order-1">
-//         <ScrollSection>
-//           {/* Added leading-relaxed (1.625) or custom leading for better spacing */}
-//           <p className="text-[#fafafa] italic font-grotesk font-bold text-2xl md:text-5xl leading-[1.3] md:leading-[1.4] text-center md:text-left">
-//             I'm a graduate of a Bachelor of Science in Information Technology
-//             from TIP – QC with a strong foundation in software and web
-//             development.
-//           </p>
-//         </ScrollSection>
-
-//         <ScrollSection>
-//           <p className="text-[#fafafa] italic font-grotesk font-semibold text-2xl md:text-5xl leading-[1.3] md:leading-[1.4]">
-//             I craft responsive, high-performance applications with clean,
-//             maintainable code — leveraging modern frameworks to build intuitive
-//             digital experiences that address real-world challenges.
-//           </p>
-//         </ScrollSection>
-
-//         <ScrollSection>
-//           <p className="text-[#fafafa] italic font-grotesk font-semibold text-2xl md:text-5xl leading-[1.3] md:leading-[1.4]">
-//             Continuously evolving with the ever-changing tech landscape, I
-//             embrace new tools, languages, and methodologies with ease, adapting
-//             quickly to deliver solutions that grow alongside the demands of the
-//             industry.
-//           </p>
-//         </ScrollSection>
-
-//         {/* Increased spacer at the bottom */}
-//         <div className="h-[40vh]" />
-//       </div>
-
-//       {/* RIGHT SIDE: STICKY IMAGE */}
-//       <div className="w-full lg:w-[40%] h-[50vh] lg:h-screen sticky top-0 self-start overflow-hidden order-1 lg:order-2">
-//         <img
-//           src="/img/InfoPic.jpg"
-//           alt="Profile"
-//           className="w-full h-full object-cover object-top"
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProfileInformation;
-
-
-
-
 import React from "react";
 import { motion as Motion } from "framer-motion";
+
 
 const ScrollSection = ({ children, showScrollGuide }) => {
   return (
@@ -138,7 +66,7 @@ const slides = [
   {
     index: "01",
     label: "background",
-    text: "I'm a graduate of a Bachelor of Science in Information Technology from TIP – QC with a strong foundation in software and web development.",
+    text: "I graduated with a Bachelor of Science in Information Technology from TIP–QC, specializing in software and web development.",
   },
   {
     index: "02",
@@ -213,12 +141,10 @@ const ProfileInformation = () => {
       `}</style>
 
       <div className="relative w-full bg-[#0a0a0a]">
-
         {/* ══════════════════════════════════════
             MOBILE / TABLET  (below lg)
         ══════════════════════════════════════ */}
         <div className="flex flex-col lg:hidden">
-
           <div className="sticky top-0 left-0 right-0 z-0 bg-[#0f0f0f]">
             <img
               src="/img/InfoPic.jpg"
@@ -227,7 +153,9 @@ const ProfileInformation = () => {
             />
             <div
               className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-              style={{ background: "linear-gradient(to bottom, transparent, #0a0a0a)" }}
+              style={{
+                background: "linear-gradient(to bottom, transparent, #0a0a0a)",
+              }}
             />
           </div>
 
@@ -245,7 +173,6 @@ const ProfileInformation = () => {
             DESKTOP  (lg and above)
         ══════════════════════════════════════ */}
         <div className="hidden lg:flex lg:flex-row lg:items-start">
-
           {/* LEFT — scrollable text */}
           <div className="col-rule relative z-10 w-[58%] order-1 bg-[#0a0a0a]">
             {slides.map((slide, i) => (
@@ -280,7 +207,9 @@ const ProfileInformation = () => {
             />
             <div
               className="absolute top-0 left-0 bottom-0 w-16 pointer-events-none"
-              style={{ background: "linear-gradient(to right, #0a0a0a, transparent)" }}
+              style={{
+                background: "linear-gradient(to right, #0a0a0a, transparent)",
+              }}
             />
             <span
               className="
@@ -294,7 +223,7 @@ const ProfileInformation = () => {
             </span>
           </div>
         </div>
-
+        
       </div>
     </>
   );

@@ -9,7 +9,7 @@ const Experience = () => {
     >
       <div className="text-center space-y-2">
         <h2 className="font-grotesk text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#FAFAFA]">
-         My Experience
+          My Experience
         </h2>
       </div>
       <ScrollStack useWindowScroll={true}>
@@ -67,6 +67,40 @@ const Experience = () => {
                 )}
               </div>
             </div>
+
+            <a
+              href="https://www.ateneo.edu/sose/aic"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                type="button"
+                className="group relative flex items-center justify-center gap-2 mt-4 px-6 py-3 
+             w-fit rounded-xl border border-blue-500/20 bg-blue-500/5 
+             text-xs font-bold tracking-[0.2em] uppercase text-blue-400
+             hover:text-white hover:border-blue-500/50 hover:bg-blue-500/20 
+             transition-all duration-500 overflow-hidden"
+              >
+                {/* Subtle "Scanning" Light Effect */}
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-blue-400/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+
+                <span className="relative z-10">Explore Research</span>
+
+                <svg
+                  className="relative z-10 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </button>
+            </a>
           </div>
         </ScrollStackItem>
 

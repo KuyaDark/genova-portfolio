@@ -197,8 +197,8 @@ const Hero = () => {
           scrollEnd="bottom bottom-=40%"
           stagger={0.03}
         >
-          “Leveraging advanced AI to amplify clean architecture and craft
-          high-performance digital solutions.”
+          Developing high-performance applications through a blend of modern AI
+          workflows and maintainable software design.
         </ScrollFloat>
       </div>
     </main>
