@@ -50,24 +50,26 @@ const Experience = () => {
             </p>
 
             {/* Tech Stack */}
-            <div>
-              <p className="font-mono text-[10px] font-medium text-white/30 uppercase tracking-widest mb-2">
-                Technologies
-              </p>
-              <div className=" flex flex-wrap gap-2">
-                {["Python", "Arduino IDE", "ESP32", "Raspberry Pi"].map(
-                  (tech) => (
-                    <span
-                      key={tech}
-                      className="font-mono px-3 py-1 rounded-md bg-white/[0.03] border border-white/[0.08] text-xs text-white/50 font-medium hover:border-blue-500/40 hover:text-blue-300 transition-colors"
-                    >
-                      {tech}
-                    </span>
-                  ),
-                )}
+            <div className="flex justify-between items-center">
+              <div>
+                {" "}
+                <p className="font-mono text-[10px] font-medium text-white/30 uppercase tracking-widest mb-2">
+                  Technologies
+                </p>
+                <div className=" flex flex-wrap gap-2">
+                  {["Python", "Arduino IDE", "ESP32", "Raspberry Pi"].map(
+                    (tech) => (
+                      <span
+                        key={tech}
+                        className="font-mono px-3 py-1 rounded-md bg-white/[0.03] border border-white/[0.08] text-xs text-white/50 font-medium hover:border-blue-500/40 hover:text-blue-300 transition-colors"
+                      >
+                        {tech}
+                      </span>
+                    ),
+                  )}
+                </div>
               </div>
             </div>
-
             <a
               href="https://www.ateneo.edu/sose/aic"
               target="_blank"
