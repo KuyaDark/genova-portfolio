@@ -1,8 +1,5 @@
-
-
 import React from "react";
 import { motion as Motion } from "framer-motion";
-
 
 const ScrollSection = ({ children, showScrollGuide }) => {
   return (
@@ -147,7 +144,7 @@ const ProfileInformation = () => {
         <div className="flex flex-col lg:hidden">
           <div className="sticky top-0 left-0 right-0 z-0 bg-[#0f0f0f]">
             <img
-              src="/img/InfoPic.jpg"
+              src="/img/Gradpic.jpg"
               alt="Renan"
               className="w-full object-contain"
             />
@@ -194,7 +191,7 @@ const ProfileInformation = () => {
             "
           >
             <img
-              src="/img/InfoPic.jpg"
+              src="/img/Gradpic.jpg"
               alt="Renan"
               className="w-full h-full object-cover object-top"
             />
@@ -223,7 +220,6 @@ const ProfileInformation = () => {
             </span>
           </div>
         </div>
-        
       </div>
     </>
   );
