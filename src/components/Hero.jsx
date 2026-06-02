@@ -136,7 +136,7 @@ const Hero = () => {
                 }}
               >
                 <img
-                  src="/img/pusa.jpg"
+                  src="/img/Gradpic2.png"
                   alt="default pixel transition content, a cat!"
                   className="w-full h-64 md:h-80 lg:h-[500px] object-cover rounded-2xl "
                 />
