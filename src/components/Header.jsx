@@ -133,24 +133,23 @@
 
 // export default Header;
 
-
 import { useEffect, useRef, useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import "boxicons/css/boxicons.min.css";
 
 const NAV_LINKS = [
-  { label: "Home",       href: "#home"       },
-  { label: "About Me",   href: "#about"      },
-  { label: "Projects",   href: "#projects"   },
+  { label: "Home", href: "#home" },
+  { label: "About Me", href: "#about" },
+  { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Contact",    href: "#contact"    },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Header = ({ visible = true }) => {
-  const [scrolled,  setScrolled]  = useState(false);
-  const [active,    setActive]    = useState("#home");
-  const [menuOpen,  setMenuOpen]  = useState(false);
-  const [fading,    setFading]    = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("#home");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [fading, setFading] = useState(false);
   const fadeRef = useRef(null);
 
   useEffect(() => {
@@ -169,8 +168,10 @@ const Header = ({ visible = true }) => {
         const el = document.getElementById(id);
         if (!el) return null;
         const obs = new IntersectionObserver(
-          ([entry]) => { if (entry.isIntersecting) setActive(`#${id}`); },
-          { rootMargin: "-10% 0px -75% 0px", threshold: 0 }
+          ([entry]) => {
+            if (entry.isIntersecting) setActive(`#${id}`);
+          },
+          { rootMargin: "-10% 0px -75% 0px", threshold: 0 },
         );
         obs.observe(el);
         return obs;
@@ -186,7 +187,9 @@ const Header = ({ visible = true }) => {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   const handleNavClick = (e, href) => {
@@ -205,7 +208,8 @@ const Header = ({ visible = true }) => {
     // 2. After fade-out completes, jump + fade back in
     clearTimeout(fadeRef.current);
     fadeRef.current = setTimeout(() => {
-      const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+      const top =
+        target.getBoundingClientRect().top + window.scrollY - headerHeight;
       window.scrollTo({ top, behavior: "instant" });
       setFading(false);
     }, 300); // matches fade-out duration
@@ -216,13 +220,13 @@ const Header = ({ visible = true }) => {
 
   const fadeDown = {
     hidden: { opacity: 0, y: -16 },
-    show:   { opacity: 1, y: 0   },
+    show: { opacity: 1, y: 0 },
   };
 
   const overlayVariants = {
     hidden: { opacity: 0 },
-    show:   { opacity: 1, transition: { duration: 0.25 } },
-    exit:   { opacity: 0, transition: { duration: 0.2  } },
+    show: { opacity: 1, transition: { duration: 0.25 } },
+    exit: { opacity: 0, transition: { duration: 0.2 } },
   };
 
   const mobileNavContainer = {
@@ -233,8 +237,12 @@ const Header = ({ visible = true }) => {
 
   const mobileNavItem = {
     hidden: { opacity: 0, x: 40 },
-    show:   { opacity: 1, x: 0, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } },
-    exit:   { opacity: 0, x: 40, transition: { duration: 0.2,  ease: "easeIn" } },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] },
+    },
+    exit: { opacity: 0, x: 40, transition: { duration: 0.2, ease: "easeIn" } },
   };
 
   return (
@@ -260,22 +268,25 @@ const Header = ({ visible = true }) => {
           px-5 sm:px-8 lg:px-20 py-4
           transition-all duration-300
           ${!visible ? "pointer-events-none opacity-0" : "opacity-100"}
-          ${scrolled
-            ? "bg-[#0a0a0a] border-b border-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
-            : "bg-[#0a0a0a]"
+          ${
+            scrolled
+              ? "bg-[#0a0a0a] border-b border-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
+              : "bg-[#0a0a0a]"
           }
         `}
       >
         {/* Logo */}
-        <Motion.h1
-          variants={fadeDown}
-          initial="hidden"
-          animate={visible ? "show" : "hidden"}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="text-xl md:text-2xl lg:text-3xl font-grotesk m-0 font-semibold tracking-tight"
-        >
-          RENAN
-        </Motion.h1>
+        <a href="#home">
+          <Motion.h1
+            variants={fadeDown}
+            initial="hidden"
+            animate={visible ? "show" : "hidden"}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="text-xl md:text-2xl lg:text-3xl font-grotesk m-0 font-semibold tracking-tight"
+          >
+            RENAN
+          </Motion.h1>
+        </a>
 
         {/* ── Desktop Nav ── */}
         <nav className="hidden md:flex items-center gap-12">
@@ -288,7 +299,11 @@ const Header = ({ visible = true }) => {
                 variants={fadeDown}
                 initial="hidden"
                 animate={visible ? "show" : "hidden"}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 + i * 0.15 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                  delay: 0.2 + i * 0.15,
+                }}
                 onClick={(e) => handleNavClick(e, href)}
                 className={`
                   relative text-base tracking-wider font-grotesk z-50
@@ -297,11 +312,13 @@ const Header = ({ visible = true }) => {
                 `}
               >
                 {label}
-                <span className={`
+                <span
+                  className={`
                   absolute -bottom-1 left-0 h-[1.5px] bg-white rounded-full
                   transition-all duration-300 ease-out
                   ${isActive ? "w-full opacity-100" : "w-0 opacity-0"}
-                `} />
+                `}
+                />
               </Motion.a>
             );
           })}
@@ -318,17 +335,27 @@ const Header = ({ visible = true }) => {
           aria-label="Toggle menu"
         >
           <Motion.span
-            animate={menuOpen ? { rotate: 45, y: 7, width: "22px" } : { rotate: 0, y: 0, width: "22px" }}
+            animate={
+              menuOpen
+                ? { rotate: 45, y: 7, width: "22px" }
+                : { rotate: 0, y: 0, width: "22px" }
+            }
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="block h-[1.5px] bg-white rounded-full origin-center"
           />
           <Motion.span
-            animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+            animate={
+              menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }
+            }
             transition={{ duration: 0.2 }}
             className="block h-[1.5px] w-[22px] bg-white rounded-full"
           />
           <Motion.span
-            animate={menuOpen ? { rotate: -45, y: -7, width: "22px" } : { rotate: 0, y: 0, width: "22px" }}
+            animate={
+              menuOpen
+                ? { rotate: -45, y: -7, width: "22px" }
+                : { rotate: 0, y: 0, width: "22px" }
+            }
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="block h-[1.5px] bg-white rounded-full origin-center"
           />
@@ -377,10 +404,13 @@ const Header = ({ visible = true }) => {
                         </span>
                         {label}
                       </span>
-                      {isActive
-                        ? <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                        : <span className="text-white/20 text-sm group-hover:translate-x-1 transition-transform duration-200">→</span>
-                      }
+                      {isActive ? (
+                        <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                      ) : (
+                        <span className="text-white/20 text-sm group-hover:translate-x-1 transition-transform duration-200">
+                          →
+                        </span>
+                      )}
                     </Motion.a>
                   );
                 })}
